@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>HTML Template til React</title>
+  </head>
+  <body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // Beder reactdom om at etablere et root inde på siden
+      const root = ReactDOM.createRoot(document.getElementById('root'))
+        //Under return behøves der ingen () da det er en singe line. Hvis der var flere linjer skal der () på.
+      const WriteJSX = () => {
+        return <h2>JSX er godt for maven!</h2>
+      }
+
+      const Summary = () => {
+        // Kan også skrives som: return 10*10
+        return <h1>{10*10}</h1>
+      }
+
+      const FavoriteMeals = () => {
+        return (
+            <ol>
+                <li>Kød</li>
+                <li>Spaghetti</li>
+                <li>Pulled Pork</li>
+                <li>Lasagne</li>
+                <li>Forårsruller</li>
+            </ol>
+        )
+      }
+
+      const Paragraphs = () => {
+        return (
+        <div>
+            <p>Afsnit 1</p>
+            <p>Afsnit 2</p>
+        </div>
+        )
+      }
+
+      const Paragraphs2 = () => {
+        return (
+        <>
+            <p>Afsnit 3</p>
+            <p>Afsnit 4</p>
+        </>
+        )
+      }
+
+      const Input = () => {
+        return <input type="text" />
+      }
+
+      const Class = () => {
+        return <section className="mainwrapper">Section with class name</section>
+      }
+
+      const IfStatement = () => {
+            const x = 11;
+
+            let text = "Godmorgen";
+            if(x > 12) {
+                text = "Goddag";
+            }
+            return <h2>{text}</h2>
+      }
+
+      const TernaryOp = () => {
+        const y = 10;
+
+        return <h1>{(y) < 12 ? "Godmorgen" : "Goddag"}</h1>
+      }
+
+
+      const App = () => {
+        return (
+            <>
+                <WriteJSX />
+                <Summary />
+                <FavoriteMeals />
+                <Paragraphs />
+                <Paragraphs2 />
+                <Input />
+                <Class />
+                <IfStatement />
+                <TernaryOp />
+            </>
+        )
+      }
+      root.render(<App />)
+
+
+
+    </script>
+
+  </body>
+</html>
