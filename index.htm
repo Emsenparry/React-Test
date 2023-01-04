@@ -54,8 +54,13 @@
       }
 
       const Input = () => {
-        return <input type="text" />
-      }
+        return (
+          <>
+            <label htmlFor="text">Text Field: </label>
+            <input type="text" name="text" />
+          </>
+        );
+      };
 
       const Class = () => {
         return <section className="mainwrapper">Section with class name</section>
