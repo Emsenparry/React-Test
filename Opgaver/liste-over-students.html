@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>HTML Template til React</title>
+  </head>
+  <body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const root = ReactDOM.createRoot(document.getElementById('root'))
+      
+      const ArrStudents = [
+        { id: 1, firstname: "Emma", lastname: "Nielsen", age: 21},
+        { id: 2, firstname: "Daniel", lastname: "Simonsen", age: 21},
+        { id: 3, firstname: "Freja", lastname: "Ask", age: 20},
+        { id: 4, firstname: "Thomas", lastname: "Skelly", age: 22}
+      ];
+
+      const List = props => {
+        return (
+          <li>{`${props.firstname} ${props.lastname} ${props.age}`}</li>
+        )
+      }
+
+      const ShowStudents = (props) => {
+           return (
+            <ul>
+            {props.students && props.students.map((item, key) => {
+              return(
+                <List key={key} firstname={item.firstname} lastname={item.lastname} age={item.age} />
+              )
+            })}
+            </ul>
+            )
+      }
+
+    root.render(<ShowStudents students={ArrStudents} />)
+
+    </script>
+
+  </body>
+</html>
