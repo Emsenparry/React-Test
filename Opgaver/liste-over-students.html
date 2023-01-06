@@ -31,7 +31,7 @@
             <ul>
             {props.students && props.students.map((item, key) => {
               return(
-                <List key={key} firstname={item.firstname} lastname={item.lastname} age={item.age} />
+                <List key={item.id} firstname={item.firstname} lastname={item.lastname} age={item.age} />
               )
             })}
             </ul>
